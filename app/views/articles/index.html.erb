@@ -1,0 +1,11 @@
+<h1 class="text-center pb-5">Here are somme of the best beers in the world</h1>
+<ul>
+  <% @articles.each do |article| %>
+  <li class="list-group-item text-center mb-2"><%= link_to article.title, article_path(article)%>--------<%= link_to "X", article_path(article),
+                                                  method: :delete,
+                                                  data: { confirm: "Are you sure?" } %></li>
+  <% end %>
+</ul>
+<div class="btn btn-primary">
+  <%= link_to 'New article', new_article_path %>
+</div>
